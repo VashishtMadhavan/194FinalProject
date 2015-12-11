@@ -41,9 +41,8 @@ class Featurizer:
 		self.num_samples = num_samples # the number of samples per training image
 		self.k = k
 		self.lab_images = convert_lab(training_images)
-		self.surf = cv2.SURF()
-		self.surf.extended = True
-		self.surf.hessianThreshold = 300
+		self.surf = cv2.DescriptorExtractor_create("SURF")
+        	self.surf.setBool("extended",True)
 		self.pca = PCA(n_components=pca_size) #can change this to adapt the number of features we want to keep
 		self.preprocess = preprocessing.MinMaxScaler()
 
