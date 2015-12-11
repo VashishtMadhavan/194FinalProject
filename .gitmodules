@@ -1,0 +1,3 @@
+[submodule "gco_python"]
+	path = gco_python
+	url = https://github.com/amueller/gco_python.git
