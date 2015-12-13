@@ -64,18 +64,18 @@
       <table align="center">
         <tr>
           <td width="40%"><img width=400 src="images/grass1.jpg"><br>training image 1</img></td>
-          <td width="40%"><img width=400 src="images/grass2.jpg"><br>training image 2</img></td>
+          <td width="40%"><img width=400 src="images/grass3.jpg"><br>training image 2</img></td>
         </tr>
       </table>
       <br><br> 
       <table align="center">
         <tr>
-          <td width="40%"><img width=400 src="images/grass3.jpg"><br>grayscale image</img></td>
-          <td width="40%"><img width=400 src="images/grass3.jpg"><br>colorized image</img></td>
+          <td width="40%"><img width=400 src="results/grass4_gray.jpg"><br>grayscale image</img></td>
+          <td width="40%"><img width=400 src="results/grass4_col.jpg"><br>colorized image</img></td>
         </tr>
       </table>
 
-      <p>Now here is an example of when we use a single image to apply color to a grayscale image. I wanted to see how a color picture of Angelina Jolie could transfter to black and white drawn portrait</p>
+      <p>Now we attempt colorization with one very similar image. In this case, we are colorizing a black and white portrait with an image of the same object that is colored. Here are some results using portraits of Angelina Jolie</p>
 
       <table align="center">
         <tr>
@@ -83,9 +83,26 @@
           <td width="40%"><img width=300 src="images/jolie_port.jpg"><br>grayscale image</img></td>
         </tr>
       </table>
+
+      <div id="wrapper" style="width:90%; text-align:center"><img width=300 src="images/jolie.jpg"></img></div>
+
+      <p>No we apply a color transfer using a similar image with a different color scheme. Here we take an image of a brown golden retriever and apply its color to a grayscale image of a blonde golden retriever. Here are the results</p>
  
       <br><br> 
-      <div id="wrapper" style="width:90%; text-align:center"><img width=300 src="images/jolie.jpg"></img></div>
+      <table align="center">
+        <tr>
+          <td width="40%"><img width=300 src="images/puppy.jpg"><br>brown golden retreiver</img></td>
+          <td width="40%"><img width=300 src="images/puppy_b.jpg"><br>blonde golden retreiver</img></td>
+        </tr>
+      </table>
+
+       <br><br> 
+      <table align="center">
+        <tr>
+          <td width="40%"><img width=300 src="images/puppy.jpg"><br>grayscale blonde retriever</img></td>
+          <td width="40%"><img width=300 src="images/puppy_b.jpg"><br>blonde golden retreiver</img></td>
+        </tr>
+      </table>
 
       <h2>Project Summary</h2>
       <p> This project was really fun because it involved a lot of machine learning, which I really enjoyed. It posed a fun, simple problem that was easy to validate and had reproducible results. The best part about this project, in my opinion, was the incorporation of both machine learning issues such as dimensionality reduction, clustering, and hyperparameter optimization and general computer vision issues, such as finding the best feature to represent the color of a given pixel. All in all, maybe not the most groundbreaking, but definitely interesting and taught me a lot more about machine learning in computer vision</p>
