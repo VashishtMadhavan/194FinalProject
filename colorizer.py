@@ -21,7 +21,7 @@ class Colorizer:
 		self.c = c
 		self.gam = gam
 		self.num_colors = featurizer.k
-		self.svms = [SVC(C=c,gamma=gam) for _ in range(self.num_colors)]
+		self.svms = [SVC() for _ in range(self.num_colors)]
 
 
 	def train(self):
