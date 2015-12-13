@@ -96,7 +96,7 @@ class Featurizer:
 	def local_meanvar_features(self,im,samples):
 		index = np.array([[x,y] for x in range(im.shape[0]) for y in range(im.shape[1])])
 		index = index[samples]
-		windowSize = self.win/2
+		windowSize = self.window/2
 		mean = np.array([np.mean(self.get_patch(windowSize,im,i)) for i in index])
 		var = np.array([np.var(self.get_patch(windowSize,im,i)) for i in index])
 	
