@@ -14,9 +14,6 @@ from sklearn.svm import SVC
 """
 class to generate features for a given set of training images
 """
-SURF_PARAMS = 20
-WINDOW = 20
-
 
 def convert_lab(train_images):
 	lab_ims = []
@@ -34,9 +31,10 @@ def get_lab(im):
 
 class Featurizer:
 
-	def __init__(self,training_images,k=10,pca_size=32,num_samples=10000):
+	def __init__(self,training_images,k=10,pca_size=32,num_samples=10000,window=20):
 		self.train = training_images
 		self.ntrain = len(training_images)
+		self.window = window
 		self.cluster = None
 		self.num_samples = num_samples # the number of samples per training image
 		self.k = k
@@ -72,7 +70,7 @@ class Featurizer:
 		surf_pts = []
 		oct1 = cv2.GaussianBlur(im,(0,0),1)
 		oct2 = cv2.GaussianBlur(im,(0,0),2)
-		keypoints = np.array([cv2.KeyPoint(i[1], i[0], SURF_PARAMS) for i in index])
+		keypoints = np.array([cv2.KeyPoint(i[1], i[0], self.window) for i in index])
 		_, des1 = self.surf.compute(im,keypoints)
 		_, des2 = self.surf.compute(oct1,keypoints)
 		_, des3 = self.surf.compute(oct2,keypoints)
@@ -89,7 +87,7 @@ class Featurizer:
 	def dft_features(self,im,samples):
 		index = np.array([[x,y] for x in range(im.shape[0]) for y in range(im.shape[1])])
 		index = index[samples]
-		windowSize = WINDOW/2
+		windowSize = self.window/2
 		l = (2*windowSize + 1)**2
 		patches = np.array([self.get_patch(windowSize,im,i) for i in index]) 
 		dft_pts = np.array([np.abs(np.fft.fft(patch.flatten())) if patch.shape[0]*patch.shape[1] == l else np.zeros(l) for patch in patches])
@@ -98,7 +96,7 @@ class Featurizer:
 	def local_meanvar_features(self,im,samples):
 		index = np.array([[x,y] for x in range(im.shape[0]) for y in range(im.shape[1])])
 		index = index[samples]
-		windowSize = WINDOW/2
+		windowSize = self.win/2
 		mean = np.array([np.mean(self.get_patch(windowSize,im,i)) for i in index])
 		var = np.array([np.var(self.get_patch(windowSize,im,i)) for i in index])
 	
