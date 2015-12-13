@@ -22,13 +22,13 @@ def convert_lab(train_images):
 	lab_ims = []
 	for im in train_images:
 		t = skio.imread(im)
-		q = cv2.cvtColor(t, cv.CV_BGR2Lab)
+		q = cv2.cvtColor(t, cv.CV_RGB2Lab)
 		lab_ims.append(q)
 	return lab_ims
 
 
 def get_lab(im):
-	lab = cv2.cvtColor(im, cv.CV_BGR2Lab)
+	lab = cv2.cvtColor(im, cv.CV_RGB2Lab)
 	return lab
 
 
