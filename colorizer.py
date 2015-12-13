@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import skimage.io as skio
 from sklearn.cluster import k_means
+from gco_python import pygco
 from sklearn.decomposition import PCA
 from scipy.fftpack import dct
 from sklearn import preprocessing
@@ -53,7 +54,7 @@ class Colorizer:
 
 
 	def color_image(self,im):
-		lab = cv2.cvtColor(im, cv.CV_BGR2Lab)
+		lab = cv2.cvtColor(im, cv.CV_RGB2Lab)
 		g = lab[:,:,0]
 		features = self.featurizer.get_features(im)
 
