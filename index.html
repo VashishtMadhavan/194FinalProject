@@ -73,7 +73,7 @@
 
         <p><font size="3" face="Lucida Console">Although some of blue bleeds onto the plain, the image colored correctly for the most part.This bleeding effect may be because of the differences between the training images and the test images, which may lead to some overfitting</font></p>
 
-      <p><font size="3" face="Lucida Console">Now we attempt colorization with one very similar image. In this case, we are colorizing a black and white portrait with an image of the same object that is colored. Here are some results using portraits of Emma Watson</font></p>
+      <p><font size="3" face="Lucida Console">Here is an example of coloring with only one example.The animal example of a tiger is similar to the example with a zebra in the paper. Lets see how it works out</font></p>
 
       <table align="center">
         <tr>
@@ -84,23 +84,24 @@
 
       <div id="wrapper" style="width:90%; text-align:center"><img width=300 src="images/tiger1.jpg"><h4>colorized image</h4></img></div>
 
-      <p><font size="3" face="Lucida Console">No we apply a color transfer using a similar image with a different color scheme. Here we take an image of a brown golden retriever and apply its color to a grayscale image of a blonde golden retriever. Here are the results</font></p>
+      <p><font size="3" face="Lucida Console">I now apply color from an image similar to the test image. This basically performs a color transfer from one image to another</font></p>
  
       <br><br> 
       <table align="center">
         <tr>
-          <td width="40%"><img width=400 src="images/puppy5.jpg"><br><h4>brown golden retreiver</h4></img></td>
-          <td width="40%"><img width=400 src="images/puppy4.png"><br><h4>blonde golden retreiver</h4></img></td>
+          <td width="40%"><img width=400 src="images/puppy4.png"><br><h4>colored golden retreiver</h4></img></td>
+          <td width="40%"><img width=400 src="images/puppy6.jpg"><br><h4>black and white golden retreiver</h4></img></td>
         </tr>
       </table>
 
-       <br><br> 
+      <!--  <br><br> 
       <table align="center">
         <tr>
           <td width="40%"><img width=400 src="results/puppy_gray.jpg"><br><h4>grayscale blonde retriever</h4></img></td>
           <td width="40%"><img width=400 src="images/puppy4.png"><br><h4>blonde golden retreiver</h4></img></td>
         </tr>
-      </table>
+      </table> -->
+      <div id="wrapper" style="width:90%; text-align:center"><img width=300 src="images/puppy6.jpg"><h4>colorized image</h4></img></div>
 
       <h2><font size="5" face="courier new" color="#142850">Project Summary</font></h2>
       <p><font size="3" face="Lucida Console">This project was really fun because it involved a lot of machine learning, which I really enjoyed. It posed a fun, simple problem that was easy to validate and had reproducible results. The best part about this project, in my opinion, was the incorporation of both machine learning issues such as dimensionality reduction, clustering, and hyperparameter optimization and general computer vision issues, such as finding the best feature to represent the color of a given pixel. All in all, maybe not the most groundbreaking, but definitely interesting and taught me a lot more about machine learning in computer vision</font></p>
