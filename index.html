@@ -36,7 +36,7 @@
 
 
       <h2><font size="5" face="courier new" color="#142850">Colorization</font></h2>
-      <p><font size="3" face="Lucida Console">Now that we have predictions for lab-space colors for given gray-scale pixels, we can also estimate the probability of a color varying at a given pixel position. Given the current set of features, we only take into account local neighborhoods of pixels. The paper,however,suggests incorporating more global information to yield optimal colorizations.Charpiat argues that with the current featuer set, a pixel's best color is only influenced by the probabilties in a local neighborhood. Since these neighborhoods are connected, there is a global interaction between all pixels.Thus,it is important to incorporate global information to get spatially coherent colorization.To do so, I used a graph cut library, as suggested by Charpiat</font></p>
+      <p><font size="3" face="Lucida Console">Now that we have predictions for lab-space colors for given gray-scale pixels, we can also estimate the probability of a color varying at a given pixel position. Given the current set of features, we only take into account local neighborhoods of pixels. The paper,however,suggests incorporating more global information to yield optimal colorizations.Charpiat argues that with the current feature set, a pixel's best color is only influenced by the probabilties in a local neighborhood. Since these neighborhoods are connected, there is a global interaction between all pixels.Thus,it is important to incorporate global information to get spatially coherent colorization.To do so, I used a graph cut library, as suggested by Charpiat</font></p>
 
       <br><br> 
       <table align="center">
@@ -84,7 +84,7 @@
 
       <div id="wrapper" style="width:90%; text-align:center"><img width=300 src="images/tiger1.jpg"><h4>colorized image</h4></img></div>
 
-      <p><font size="3" face="Lucida Console">I now apply color from an image similar to the test image. This basically performs a color transfer from one image to another</font></p>
+      <p><font size="3" face="Lucida Console">The next experiment attempts to transfer the color from a colored image to another image that represents the same object, but has a slightly different color. To best exemplify this kind of experiment, I chose to transfer color from a brown golden retreiver puppy to a blonde one. Here are the results</font></p>
  
       <br><br> 
       <table align="center">
@@ -101,6 +101,9 @@
           <td width="40%"><img width=400 src="results/puppy_color.jpg"><br><h4>colorized golden retreiver</h4></img></td>
         </tr>
       </table>
+
+      <p><font size="3" face="Lucida Console">As you can see, the color seems to be successfully transferred from the left image. The blonde retriever has a significantly more golden color. However, there is some error around the borders of the puppy that bleed onto the grass. This is the same effect as the grass image. In addition, some of the grass in the back is not definitively green. I believe this is because of the blur at the back of the image, which leads inaccuracte feature represenation of the feature.</font></p>
+
 
       <h2><font size="5" face="courier new" color="#142850">Project Summary</font></h2>
       <p><font size="3" face="Lucida Console">This project was really fun because it involved a lot of machine learning, which I really enjoyed. It posed a fun, simple problem that was easy to validate and had reproducible results. The best part about this project, in my opinion, was the incorporation of both machine learning issues such as dimensionality reduction, clustering, and hyperparameter optimization and general computer vision issues, such as finding the best feature to represent the color of a given pixel. All in all, maybe not the most groundbreaking, but definitely interesting and taught me a lot more about machine learning in computer vision</font></p>
