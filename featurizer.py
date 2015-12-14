@@ -117,7 +117,8 @@ class Featurizer:
 			dft = self.dft_features(lum,samples)
 			print "Meanvar Features..."
 			mv = self.local_meanvar_features(lum,samples)
-			feat = np.hstack((np.hstack((np.hstack((disc,sf)),dft)),mv))
+			#feat = np.hstack((np.hstack((np.hstack((disc,sf)),dft)),mv))
+            		feat = np.hstack((np.hstack((sf,dft)),mv))
 			if i == 0:
 				self.features = feat
 				self.labels = lab
@@ -138,7 +139,8 @@ class Featurizer:
 		srf = self.surf_features(lum,samples)
 		dft = self.dft_features(lum,samples)
 		mv = self.local_meanvar_features(lum,samples)
-		total_features = np.hstack((np.hstack((np.hstack((disc,srf)),dft)),mv))
+		#total_features = np.hstack((np.hstack((np.hstack((disc,srf)),dft)),mv))
+       	 	total_features = np.hstack((np.hstack((srf,dft)),mv))
 
 		#use PCA to compress features to 32
 		features = self.preprocess.transform(total_features)
