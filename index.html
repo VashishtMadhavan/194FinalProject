@@ -26,9 +26,6 @@
         </tr>
       </table>
 
-
-      <!-- TODO: Add pic of sample image and one with discretized colors -->
-
       <h2><font size="5" face="courier new" color="#142850">Feature Matrix</font></h2>
       <p><font size="3" face="Lucida Console">In addition the lab components described above, I needed to find a good set of features to represent pixel color information and assign colors to the right places in the image. This reminded me of feature matching in automatic image morphing and allowed me to recall the SIFT descriptor, which basically captures the local context of the image.After reading a bit, many implementations of SURF are much faster than SIFT and more robust to image transformations. As a result, I used SURF features. In addition, the paper suggests localized mean and variance features to capture image texture, and also the laplacian filter features over that window to capture frequency information. Since all this information results in a very high dimensional space, we used PCA to reduce the feature space to somewhere from 32 - 64. We did this for a random sample of pixels from each image, since using all 40,000 pixels from a 500x800 image would be too computationally expensive. In this case, I chose 10,000 samples from each training image</font></p>
 
@@ -69,17 +66,19 @@
       <br><br> 
       <table align="center">
         <tr>
-          <td width="40%"><img width=400 src="results/grass4_gray.jpg"><br><h4>grayscale image</h4></img></td>
-          <td width="40%"><img width=400 src="results/grass4_col.jpg"><br><h4>colorized image</h4></img></td>
+          <td width="60%"><img width=400 src="results/grass4_gray.jpg"><br><h4>grayscale image</h4></img></td>
+          <td width="60%"><img width=400 src="results/grass4_col.jpg"><br><h4>colorized image</h4></img></td>
         </tr>
       </table>
+
+        <p><font size="3" face="Lucida Console">Although some of blue bleeds onto the plain, the image colored correctly for the most part.This bleeding effect may be because of the differences between the training images and the test images, which may lead to some overfitting</font></p>
 
       <p><font size="3" face="Lucida Console">Now we attempt colorization with one very similar image. In this case, we are colorizing a black and white portrait with an image of the same object that is colored. Here are some results using portraits of Angelina Jolie</font></p>
 
       <table align="center">
         <tr>
           <td width="40%"><img width=300 src="images/jolie.jpg"><br><h4>color image</h4></img></td>
-          <td width="40%"><img width=300 src="images/jolie_port.jpg"><br><h4>grayscale image</h4></img></td>
+          <td width="40%"><img width=300 src="images/jolie2.jpg"><br><h4>grayscale image</h4></img></td>
         </tr>
       </table>
 
@@ -90,16 +89,16 @@
       <br><br> 
       <table align="center">
         <tr>
-          <td width="40%"><img width=400 src="images/puppy.jpg"><br><h4>brown golden retreiver</h4></img></td>
-          <td width="40%"><img width=400 src="images/puppy_b.jpg"><br><h4>blonde golden retreiver</h4></img></td>
+          <td width="40%"><img width=400 src="images/puppy_b.jpg"><br><h4>brown golden retreiver</h4></img></td>
+          <td width="40%"><img width=400 src="images/puppy.jpg"><br><h4>blonde golden retreiver</h4></img></td>
         </tr>
       </table>
 
        <br><br> 
       <table align="center">
         <tr>
-          <td width="40%"><img width=400 src="images/puppy.jpg"><br><h4>grayscale blonde retriever</h4></img></td>
-          <td width="40%"><img width=400 src="images/puppy_b.jpg"><br><h4>blonde golden retreiver</h4></img></td>
+          <td width="40%"><img width=400 src="results/puppy_gray.jpg"><br><h4>grayscale blonde retriever</h4></img></td>
+          <td width="40%"><img width=400 src="images/puppy.jpg"><br><h4>blonde golden retreiver</h4></img></td>
         </tr>
       </table>
 
