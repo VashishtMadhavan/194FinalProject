@@ -1,0 +1,21 @@
+To run the code used to get results for this project, open the ipython notebook : Main.ipynb
+
+To run parameter sweeps for given images:
+
+open Main2.ipynb and run the cells
+	* test image - choose a test image from the images folder and replace the string in the imread function
+	* training_images - choose a set of training images from the images folder and replace the strings in the list
+
+
+
+- featurizer.py = creates feature vectors and labels for a given training set
+	- compute_k_means = computes the discretized colors for a given k
+	- compute_features = creates feature,label matrices for the training data
+- colorizer.py = trains the SVMs and colorizes a test image
+	* takes in a featurizer which presumably has called the functions described above
+	- train = trains the SVM classifiers for each color in the featurizer
+	- color_image = takes in a grayscale image and colors it in
+
+
+
+	
