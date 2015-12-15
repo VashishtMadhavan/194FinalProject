@@ -16,12 +16,15 @@ from sklearn.svm import SVC
 class to colorize an image based on the features provided
 """
 class Colorizer:
-	def __init__(self,featurizer,c=1.0,gam='auto'):
+	def __init__(self,featurizer,c=1.0,gam=1.0):
 		self.featurizer = featurizer
 		self.c = c
-		self.gam = gam
+		if gam == 1.0:
+			self.gam = gam/self.featurizer.pca.n_components_
+		else:
+			self.gam = gam
 		self.num_colors = featurizer.k
-		self.svms = [SVC() for _ in range(self.num_colors)]
+		self.svms = [SVC(C=c,gamma=self.gam) for _ in range(self.num_colors)]
 
 
 	def train(self):
